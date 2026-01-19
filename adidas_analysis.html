@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Adidas Sales Analysis — Shruti Deshpande</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top header/navigation (adapted) -->
+  <header id="header">
+    <h1><a href="index.html">Shruti Deshpande | Business Analyst Portfolio</a></h1>
+  </header>
+
+  <main>
+    <div class="project-desc">
+      <div class="desc-head">
+        <h1>Adidas Sales Analysis</h1>
+        <h4>Data Cleaning | Sales Performance | Regional Analysis</h4>
+        <h5>Uncover trends and
+patterns that can inform data-driven decisions</h5>
+        <div class="header-meta">
+          <div class="profile-author"><em>Shruti Deshpande</em></div>
+          <a href="imgs/ProfilePhoto.jpeg" class="profile-photo header-photo image">
+            <img src="imgs/ProfilePhoto.jpeg" alt="Profile photo of Shruti Deshpande">
+          </a>
+          <div class="modal">
+            <img src="" alt="">
+            <button class="modal-close">✕</button>
+          </div>
+        </div>
+      </div>
+      <div class="desc-body">
+        <p>In this project I analyzed the Adidas sales database for the year 2020 and 2021 and identify key insights to help improve sales performance and optimize business strategies. By analyzing the sales data, we aim to understand factors influencing sales, identify trends, and uncover opportunities for growth. What I didn’t expect? Just how messy the data would be—and how much I’d grow as a problem-solver by cleaning it up. The data looked clean; however, it was not.</p>
+        <img src="imgs/Adidas/AdidasOverview.png" alt="Overview of Adidas Sales Data">
+        <p><strong>Data Cleaning:</strong>
+        Our original dataset contained spaces between words in column names, so for writing code more smoothly, we removed those spaces. We also had to adjust our Invoice Date column to be read as a date, in order to filter the data by 2020 and 2021. The date formats also were mixed between using dashes and slashes so we had to format all the dates to a single format. We checked for missing and null values in our data as well as checked to make sure our numeric values were read as numbers and not as text.</p>
+        <br>
+        <p>Once the data was clean, I wrote SQL queries to find interesting insights:</p>
+        <br>
+        <p><strong>Insight #1: Total Sales and Profits across US States - </strong> The trend was similar across both metrics: New York ranked highest, while Nebraska ranked lowest.</p>
+        <img src="imgs/Adidas/StateLevelAnalysis.png" alt="State Level Analysis of Adidas Sales and Profits">
+
+        <p><strong>Insight #2: Pricing Analysis</strong><br>
+        <em>High Average Price ≠ Highest Operating Profit</em><br>
+        Washington had the highest average price per unit, but it doesn’t appear among the top profit-generating states — indicating that higher unit prices do not necessarily translate to maximum total profit. Texas, California, Florida, and New York emerge as profit powerhouses despite not having the very highest prices, which suggests that sales volume is the primary driver of total profit.</p>
+
+        <img src="imgs/Adidas/RegionalProfit.png" alt="Regional Profit Analysis of Adidas Sales">
+
+        <p><strong>Recommendations — Pricing Opportunities</strong><br>
+        Some high-price states (for example, Washington and Colorado) show only moderate profits; a modest price reduction could increase sales volume and overall profit. Conversely, high-volume, mid-price states such as Texas and Florida could be candidates for selective premium pricing experiments without materially reducing volume.</p>
+        
+        <br
+        <p><strong>Insight #3: Channels tell a story too</strong><br>
+        Online sales stand out as the top performer, generating the highest operating profit among channels. This indicates strong digital sales momentum for Adidas: the online channel benefits from lower overhead costs and wider reach, possibly boosted by increased consumer adoption of e-commerce and effective digital marketing strategies.</p>
+
+        <div class="side-by-side">
+          <img src="imgs/Adidas/AvgPrice.png" alt="Average Price Analysis of Adidas Sales">
+          <img src="imgs/Adidas/Profits.png" alt="Profit Analysis of Adidas Sales">
+        </div>
+          <p><strong>Recommendations:</strong> Based on the analysis, expand the online sales channel to capture higher-margin opportunities and broader reach. Specifically, improve the online user experience (faster checkout, clearer product pages), deploy targeted digital advertising to high-conversion segments, and strengthen retailer integration to streamline fulfillment and reduce costs. These steps should help increase conversion, raise average order value, and amplify operating profit from the digital channel.</p>
+        
+          <a href="index.html" class="back-link">← BACK TO PROJECTS</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Shruti Deshpande</p>
+  </footer>
+
+  <script src="assets/js/scroll-top.js"></script>
+  <script>
+    // Lightbox functionality for profile photo
+    document.addEventListener('DOMContentLoaded', function() {
+      const profilePhotoLink = document.querySelector('.profile-photo.image');
+      if (profilePhotoLink) {
+        profilePhotoLink.addEventListener('click', function(event) {
+          event.preventDefault(); event.stopPropagation();
+          const modal = this.nextElementSibling; const modalImg = modal.querySelector('img'); const href = this.getAttribute('href');
+          modalImg.setAttribute('src', href); modal.classList.add('visible'); modal.focus();
+        });
+        const modal = profilePhotoLink.nextElementSibling;
+        modal.addEventListener('click', function(event) { if (event.target === this) { this.classList.remove('visible'); } });
+        const closeBtn = modal.querySelector('.modal-close'); closeBtn.addEventListener('click', function(event) { event.stopPropagation(); modal.classList.remove('visible'); });
+        modal.addEventListener('keydown', function(event) { if (event.key === 'Escape') { this.classList.remove('visible'); } });
+      }
+    });
+  </script>
+</body>
+</html>

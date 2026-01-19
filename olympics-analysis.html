@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Olympics Analysis — Shruti Deshpande</title>
+  <link rel="stylesheet" href="styles.css">
+  <main>
+    <div class="project-desc">
+      <div class="desc-head">
+        <h2>Overview</h2>
+        <div class="header-meta">
+          <div class="profile-author"><em>Shruti Deshpande</em></div>
+          <a href="imgs/ProfilePhoto.jpeg" class="profile-photo header-photo image">
+            <img src="imgs/ProfilePhoto.jpeg" alt="Profile photo of Shruti Deshpande">
+          </a>
+          <div class="modal">
+            <img src="" alt="">
+            <button class="modal-close">✕</button>
+          </div>
+        </div>
+      </div>
+      <div class="desc-body">
+        <p>Placeholder page for the Olympics analysis. Summarize findings, methods, and include charts or links.</p>
+        <a href="index.html" class="back-link">← BACK TO PROJECTS</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Shruti Deshpande</p>
+  </footer>
+
+  <script src="assets/js/scroll-top.js"></script>
+  <script>
+    // Lightbox functionality for profile photo
+    document.addEventListener('DOMContentLoaded', function() {
+      const profilePhotoLink = document.querySelector('.profile-photo.image');
+      if (profilePhotoLink) {
+        profilePhotoLink.addEventListener('click', function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          const modal = this.nextElementSibling;
+          const modalImg = modal.querySelector('img');
+          const href = this.getAttribute('href');
+          modalImg.setAttribute('src', href);
+          modal.classList.add('visible');
+          modal.focus();
+        });
+        const modal = profilePhotoLink.nextElementSibling;
+        modal.addEventListener('click', function(event) { if (event.target === this) { this.classList.remove('visible'); } });
+        const closeBtn = modal.querySelector('.modal-close');
+        closeBtn.addEventListener('click', function(event) { event.stopPropagation(); modal.classList.remove('visible'); });
+        modal.addEventListener('keydown', function(event) { if (event.key === 'Escape') { this.classList.remove('visible'); } });
+      }
+    });
+  </script>
+</body>
+</html>

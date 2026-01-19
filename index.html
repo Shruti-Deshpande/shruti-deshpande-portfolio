@@ -1,216 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Shruti Deshpande | Portfolio</title>
-  <style>
-    :root {
-      --primary: #6faed9;
-      --secondary: #eaf4fb;
-      --accent: #4b8fc4;
-      --text-dark: #1f2933;
-      --text-light: #5f6c7b;
-      --card-bg: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    body {
-      background: linear-gradient(180deg, var(--secondary), #ffffff);
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
-
-    header {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 2rem;
-      padding: 4rem 8%;
-      align-items: center;
-    }
-
-    .intro h1 {
-      font-size: 2.8rem;
-      color: var(--accent);
-    }
-
-    .intro p {
-      margin-top: 1rem;
-      color: var(--text-light);
-      max-width: 600px;
-    }
-
-    .photo-placeholder {
-      width: 100%;
-      height: 260px;
-      border: 2px dashed var(--primary);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-light);
-      background-color: #f5fbff;
-    }
-
-    section {
-      padding: 3.5rem 8%;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: var(--accent);
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: 18px;
-      padding: 1.8rem;
-      margin-bottom: 1.8rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-    }
-
-    .card h3 {
-      margin-bottom: 0.5rem;
-    }
-
-    .card span {
-      font-size: 0.9rem;
-      color: var(--text-light);
-    }
-
-    ul {
-      margin-top: 1rem;
-      padding-left: 1.2rem;
-    }
-
-    ul li {
-      margin-bottom: 0.6rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #f0f8fd;
-      color: var(--text-light);
-      font-size: 0.9rem;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 900px) {
-      header {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- HERO / ABOUT -->
-  <header>
-    <div class="intro">
-      <h1>Shruti Deshpande</h1>
-      <p>
-        Data & Risk Analytics professional with experience in building automated
-        insight engines, portfolio monitoring solutions, and analytics-driven
-        business strategies across global financial markets.
-      </p>
-      <p style="margin-top: 1rem;">
-        📍 Seattle, WA · <a href="mailto:shrutideshpande9598@gmail.com">Email</a> ·
-        <a href="https://www.linkedin.com/in/shruti-deshpande-445b3215a/" target="_blank">LinkedIn</a>
-      </p>
+  <header class="hero">
+    <a href="imgs/ProfilePhoto.jpeg" class="profile-photo image">
+      <img src="imgs/ProfilePhoto.jpeg" alt="Profile photo of Shruti Deshpande">
+    </a>
+    <div class="modal">
+      <img src="" alt="">
+      <button class="modal-close">✕</button>
     </div>
-
-    <!-- EMPTY PHOTO SECTION -->
-    <div class="photo-placeholder">
-      Photograph Placeholder
+    <h1>Shruti Deshpande</h1>
+    <p class="subtitle">Pattern Hunter | Insight Creator | Business Driver</p>
+    <p>Turning complexity into clarity</p>
+    <div class="hero-actions">
+      <a class="circle-btn resume" href="assets/ShrutiDeshpande_Resume.pdf" target="_blank" rel="noopener" aria-label="Resume">
+        <img src="imgs/ResumeIcon.png" alt="Resume">
+      </a>      
+      <a class="circle-btn linkedin" href="https://www.linkedin.com/in/shruti-deshpande-445b3215a" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <a class="circle-btn email" href="mailto:shrutideshpande9598@gmail.com" aria-label="Email Shruti">@</a>
     </div>
   </header>
+  <main id="projects">
+    <section class="project">
+      <img id="AdidasRep" src="imgs/AdidasRep.png" alt="KPI Dashboard Screenshot">
+      <div class="project-content">
+        <h3>Analyzed Adidas Sales Data to Uncover Key Insights and Drive Business Decisions</h3>
+        <p><strong>Skills:</strong> Tableau | Business Intelligence | Data Visualization | Data Storytelling</p>
+        <a href="adidas_analysis.html" class="btn-small">Learn More</a>
+      </div>
+    </section>
 
-  <!-- WORK EXPERIENCE -->
-  <section>
-    <h2>Work Experience</h2>
+    <section class="project reverse">
+      <img id="TataNanoRep" src="imgs/TataNanoRep.png" alt="Tata Nano Strategy Project">
+      <div class="project-content">
+        <h3>Reimagining the Tata Nano with new strategy for the current market trends</h3>
+        <p><strong>Skills:</strong> Tableau | Python | Business Intelligence | Data Visualization | Data Storytelling</p>
+        <a href="nano_strategy.html" class="btn-small">Learn More</a>
+      </div>
+    </section>
 
-    <div class="card">
-      <h3>Senior Analyst – Risk Analytics | HSBC</h3>
-      <span>Bangalore, India · Dec 2022 – Sep 2024</span>
-      <ul>
-        <li>Developed a Python-based automated insights and alerting engine to monitor credit card portfolio health across Asian markets.</li>
-        <li>Implemented configurable threshold-based anomaly detection, eliminating ~80 hours/week of manual analysis.</li>
-        <li>Reduced credit card losses by 2% in Malaysia through enhanced credit line management strategies.</li>
-        <li>Drove 8% growth in card acquisitions in Vietnam through data-backed product limit recommendations.</li>
-      </ul>
+    <section class="project">
+      <img id="InfinityBankRep" src="imgs/InfinityBankRep.png" alt="Olympics Analysis">
+      <div class="project-content">
+        <h3>Which customer segments to Grow, which to Protect: Customer Segmentation for Profitability in Banking</h3>
+        <a href="customer_segmentation.html" class="btn-small">Learn More</a>
+      </div>
+    </section>
+
+    <section class="project reverse">
+      <img src="imgs/Hsbc/BankLogo.jpg" alt="HSBC Bank Logo">
+      <div class="project-content">
+        <h3>My industry experience at HSBC</h3>
+        <p><strong>Skills:</strong> Credit Risk | Risk Analytics | Business Intelligence | Data Visualization | Data Storytelling</p>
+        <a href="hsbc_experience.html" class="btn-small">Learn More</a>
+      </div>
+    </section>
+  </main>
+
+  <section class="wrapper style1 align-center">
+    <div class="inner">
+      <h2>After Hours, Elsewhere</h2>
+      <p>Curiosity doesn’t clock out. New places reveal patterns you can’t see standing still.</p>
     </div>
 
-    <div class="card">
-      <h3>Data Analyst – Risk Analytics | HSBC</h3>
-      <span>Aug 2020 – Nov 2022</span>
-      <ul>
-        <li>Aggregated 8M+ loan records using SQL/SAS to build a centralized analytics layer.</li>
-        <li>Designed Qlik Sense dashboards used by 500+ stakeholders to track credit risk metrics.</li>
-        <li>Automated COVID-19 payment holiday risk monitoring across 8 Asian markets.</li>
-        <li>Delivered roll-rate and early-warning analysis to improve reporting turnaround by 30%.</li>
-      </ul>
+    <div class="gallery style2 medium lightbox">
+      <div class="backward">‹</div>
+      <div class="scroll">
+      <article>
+        <a href="imgs/gallery/Marlborough.jpg" class="image"><img src="imgs/gallery/Marlborough.jpg" alt="Home"></a>
+        <div class="caption">
+          <h3>Home, MA</h3>
+        </div>
+      </article>        
+      <article>
+        <a href="imgs/gallery/CharlesRiver.jpg" class="image"><img src="imgs/gallery/CharlesRiver.jpg" alt="Charles River"></a>
+        <div class="caption">
+          <h3>Charles River, MA</h3>
+        </div>
+      </article>
+      <article>
+        <a href="imgs/gallery/Starbucks.jpg" class="image"><img src="imgs/gallery/Starbucks.jpg" alt="Starbucks"></a>
+        <div class="caption">
+          <h3>Starbucks, WA</h3>
+        </div>
+      </article>      
+      <article>
+        <a href="imgs/gallery/Boston.jpg" class="image"><img src="imgs/gallery/Boston.jpg" alt="Boston"></a>
+        <div class="caption">
+          <h3>Boston, MA</h3>
+        </div>
+      </article>
+      <article>
+        <a href="imgs/gallery/IceCastles.jpg" class="image"><img src="imgs/gallery/IceCastles.jpg" alt="Ice Castles"></a>
+        <div class="caption"><h3>Ice Castles, NH</h3></div>
+      </article>
+      <article>
+        <a href="imgs/gallery/JordanPond.jpg" class="image"><img src="imgs/gallery/JordanPond.jpg" alt="Jordan Pond"></a>
+        <div class="caption"><h3>Jordan Pond, ME</h3></div>
+      </article>
+      <article>
+        <a href="imgs/gallery/MorseInstitute.jpg" class="image"><img src="imgs/gallery/MorseInstitute.jpg" alt="Morse Institute"></a>
+        <div class="caption"><h3>Morse Institute, MA</h3></div>
+      </article>
+      <article>
+        <a href="imgs/gallery/Snoqualmie.jpg" class="image"><img src="imgs/gallery/Snoqualmie.jpg" alt="Snoqualmie"></a>
+        <div class="caption"><h3>Snoqualmie, WA</h3></div>
+      </article>
+      </div>
+      <div class="forward">›</div>
     </div>
-  </section>
 
-  <!-- ACADEMIC PROJECTS -->
-  <section>
-    <h2>Academic & Personal Projects</h2>
-
-    <div class="card">
-      <h3>Adidas Sales Analysis</h3>
-      <ul>
-        <li>Cleaned and standardized datasets, reducing noise by over 20%.</li>
-        <li>Identified state-level sales trends across the U.S.</li>
-        <li>Recommended pricing optimizations for low-volume and high-profit markets.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section>
-    <h2>Education</h2>
-
-    <div class="card">
-      <h3>University of Washington – Foster School of Business</h3>
-      <span>MS in Business Analytics · 2025 – 2026 · GPA: 3.79/4</span>
+    <div id="modal" class="modal" aria-hidden="true">
+      <img id="modal-img" src="" alt="" />
+      <button id="modal-close" class="modal-close" aria-label="Close">×</button>
     </div>
 
-    <div class="card">
-      <h3>National Institute of Technology Surathkal</h3>
-      <span>B.Tech in Electrical Engineering · 2016 – 2020 · GPA: 8.88/10</span>
-    </div>
-  </section>
+    <script>
+      (function(){
+        const gallery = document.querySelector('.gallery');
+        if(!gallery) return;
+        const links = Array.from(gallery.querySelectorAll('a.image'));
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        const btnClose = document.getElementById('modal-close');
 
-  <!-- ABOUT ME -->
-  <section>
-    <h2>More About Me</h2>
-    <div class="card">
-      <ul>
-        <li>Visited NASA Space Camp during high school after ranking in the top 5% nationally.</li>
-        <li>Treasurer of SPIC MACAY, organizing cultural events for 500+ attendees.</li>
-      </ul>
-    </div>
-  </section>
+        links.forEach(a=>{
+          a.addEventListener('click', e=>{
+            e.preventDefault();
+            const href = a.getAttribute('href');
+            modalImg.src = href;
+            modal.setAttribute('aria-hidden','false');
+            modal.classList.add('visible');
+          });
+        });
+
+        function closeModal(){ modal.classList.remove('visible'); modal.setAttribute('aria-hidden','true'); modalImg.src=''; }
+        btnClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
+        document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+      })();
+      (function(){
+        const gallery = document.querySelector('.gallery');
+        if(!gallery) return;
+        const scroller = gallery.querySelector('.scroll') || gallery; // scroll container
+        let moveInterval = null;
+
+        function startMove(direction){
+          stopMove();
+          moveInterval = setInterval(()=>{ scroller.scrollLeft += direction * 8; }, 10);
+        }
+        function stopMove(){ if(moveInterval){ clearInterval(moveInterval); moveInterval = null; } }
+
+        const forward = gallery.querySelector('.forward');
+        const backward = gallery.querySelector('.backward');
+
+        if(forward){
+          forward.addEventListener('mouseenter', ()=> startMove(1));
+          forward.addEventListener('mouseleave', stopMove);
+          forward.addEventListener('click', ()=> scroller.scrollBy({left: scroller.clientWidth/2, behavior:'smooth'}));
+        }
+        if(backward){
+          backward.addEventListener('mouseenter', ()=> startMove(-1));
+          backward.addEventListener('mouseleave', stopMove);
+          backward.addEventListener('click', ()=> scroller.scrollBy({left: -scroller.clientWidth/2, behavior:'smooth'}));
+        }
+
+        // also support wheel horizontal
+        // wheel scrolling on the inner scroller
+        scroller.addEventListener('wheel', (e)=>{
+          if(Math.abs(e.deltaX) < 1) e.preventDefault();
+          scroller.scrollLeft += e.deltaY + e.deltaX;
+        }, { passive: true });
+
+      })();
+    </script>
+
+    <script>
+      // Lightbox functionality for profile photo
+      document.addEventListener('DOMContentLoaded', function() {
+        const profilePhotoLink = document.querySelector('.hero .profile-photo.image');
+        
+        if (profilePhotoLink) {
+          profilePhotoLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            const modal = this.nextElementSibling;
+            const modalImg = modal.querySelector('img');
+            const href = this.getAttribute('href');
+            
+            // Set image source
+            modalImg.setAttribute('src', href);
+            
+            // Show modal
+            modal.classList.add('visible');
+            modal.focus();
+          });
+          
+          // Close modal on click
+          const modal = profilePhotoLink.nextElementSibling;
+          modal.addEventListener('click', function(event) {
+            if (event.target === this) {
+              this.classList.remove('visible');
+            }
+          });
+          
+          // Close modal on close button click
+          const closeBtn = modal.querySelector('.modal-close');
+          closeBtn.addEventListener('click', function(event) {
+            event.stopPropagation();
+            modal.classList.remove('visible');
+          });
+          
+          // Close modal on Escape key
+          modal.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+              this.classList.remove('visible');
+            }
+          });
+        }
+      });
+    </script>
 
   <footer>
-    © 2025 Shruti Deshpande · Built with HTML & CSS · Hosted on GitHub Pages
+    <p>&copy; 2026 Shruti Deshpande</p>
   </footer>
-
+  <script src="assets/js/scroll-top.js"></script>
 </body>
 </html>

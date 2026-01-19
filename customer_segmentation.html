@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Infinity Bank Customer Segmentation — Shruti Deshpande</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top header/navigation (adapted) -->
+  <header id="header">
+    <h1><a href="index.html">Shruti Deshpande | Business Analyst Portfolio</a></h1>
+  </header>
+
+  <main>
+    <div class="project-desc">
+      <div class="desc-head">
+        <h1>Segmenting Value, Risk, and Growth at Infinity Bank</h1>
+        <h4>Customer Retention | Risk Management | Customer Segmentation</h4>
+        <h5> Customer Segmentation for Profitability in Banking</h5>
+        <div class="header-meta">
+          <div class="profile-author"><em>Shruti Deshpande</em></div>
+          <a href="imgs/ProfilePhoto.jpeg" class="profile-photo header-photo image">
+            <img src="imgs/ProfilePhoto.jpeg" alt="Profile photo of Shruti Deshpande">
+          </a>
+          <div class="modal">
+            <img src="" alt="">
+            <button class="modal-close">✕</button>
+          </div>
+        </div>
+      </div>
+      <div class="desc-body">
+        <h3>Business Challenge & Segmentation Objective</h3>
+        <p>Infinity Bank faced a familiar but high-impact problem: not all customers contribute equally to profitability, and treating them the same is expensive. Marketing, risk, and retention teams needed a clearer way to decide who to invest in, who to protect, and where to pull back.</p><br>
+        <p>As part of Customer Analytics project, we focused on building a customer segmentation framework that connects data directly to those decisions — identifying customers to prioritize for cross-selling, retain proactively, or manage for risk. This project used customer segmentation and predictive analytics to turn a 2,205-customer weighted sample into clear, decision-ready segments aligned to business actions.</p><br>
+        <h3>Segmentation & Modeling Approach</h3>
+        <p>We segmented customers based on product depth and financial behavior across three core products: Current Accounts, Credit Cards, and Mortgages. The dataset included 1,000 customers per product-combination segment, allowing consistent comparison across customer types.</p>
+        <p>To move from descriptive segmentation to decision-ready insights, we built logistic regression models, each aligned to a specific business question:</p>
+        <ul>
+          <li>Who is most likely to take a credit card?</li>
+          <li>Who is at elevated risk of default?</li>
+          <li>Which customers are profitable — and which are likely to churn?</li>
+        </ul>
+        <p>Rather than using raw predictions, customers were grouped into high, medium, and low probability segments, ensuring outputs could be directly used by marketing, risk, and collection teams.</p><br>
+        <h3>What the Segments Revealed</h3>
+        <p><strong>Cross-Sell Opportunity</strong><br>
+        The credit card propensity model surfaced a distinct high-propensity segment of 239 customers representing the strongest immediate growth opportunity. These customers showed strong current account balances and revenues, making them ideal targets for focused cross-sell campaigns. Medium-propensity customers could be reached through low-cost channels, while low-propensity customers were intentionally deprioritized to avoid inefficient spending.</p>
+        <p><strong>Risk Exposure</strong><br>
+        Default risk modeling identified a small but critical subset of 52 customers with significantly higher probabilities of default. Isolating this segment enables earlier intervention and more efficient use of risk management resources, without over-monitoring the broader customer base.</p>
+        <img id="DefaultProfit" src="imgs/InfinityBank/DefaultsVsProfit.png" alt="Defaults vs Profit">
+        <p><strong>Profitability & Churn Dynamics</strong><br>
+        Profitability analysis showed that credit card revenues and service costs were the primary drivers of customer value. Several commonly assumed predictors, including certain balance and mortgage-related variables, were not statistically significant. Churn risk varied meaningfully by product depth, reinforcing the importance of multi-product relationships in long-term retention.</p>
+        <img id="ChurnRate" src="imgs/InfinityBank/ChurnRate.png" alt="Churn Rate">
+        <h3>Business Value Delivered</h3>
+        <p>This segmentation-driven approach allowed Infinity Bank to move from broad, reactive strategies to focused, data-backed decision-making:</p>
+        <ul>
+          <li>Focus cross-sell efforts on 239 high-propensity customers with the highest expected return</li>
+          <li>Proactively manage risk by prioritizing 52 high-risk customers for monitoring and intervention</li>
+          <li>Align retention and marketing resources with customers who actually drive profit, rather than relying on surface-level metrics</li>
+        </ul>
+        <p>The result was a clear prioritization framework that leadership could operationalize across teams, balancing growth, risk, and profitability.</p><br>
+        <h3>Limitations & Next Iteration</h3>
+        <p>The analysis was limited by static, point-in-time data and incomplete customer history. Future iterations would strengthen the framework by:</p>
+        <ul>
+          <li>Introducing time-series analysis to capture behavioral change</li>
+          <li>Tracking customer movement across product combinations</li>
+          <li>Validating cross-sell and retention strategies through A/B testing</li>
+          <li>Enriching the dataset with additional behavioral and demographic features</li>
+        </ul>
+        <p>Even with these constraints, the project demonstrates how customer segmentation, when paired with predictive modeling, can directly shape business strategy.</p>
+          <a href="index.html" class="back-link">← BACK TO PROJECTS</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Shruti Deshpande</p>
+  </footer>
+
+  <script src="assets/js/scroll-top.js"></script>
+  <script>
+    // Lightbox functionality for profile photo
+    document.addEventListener('DOMContentLoaded', function() {
+      const profilePhotoLink = document.querySelector('.profile-photo.image');
+      if (profilePhotoLink) {
+        profilePhotoLink.addEventListener('click', function(event) {
+          event.preventDefault(); event.stopPropagation();
+          const modal = this.nextElementSibling; const modalImg = modal.querySelector('img'); const href = this.getAttribute('href');
+          modalImg.setAttribute('src', href); modal.classList.add('visible'); modal.focus();
+        });
+        const modal = profilePhotoLink.nextElementSibling;
+        modal.addEventListener('click', function(event) { if (event.target === this) { this.classList.remove('visible'); } });
+        const closeBtn = modal.querySelector('.modal-close'); closeBtn.addEventListener('click', function(event) { event.stopPropagation(); modal.classList.remove('visible'); });
+        modal.addEventListener('keydown', function(event) { if (event.key === 'Escape') { this.classList.remove('visible'); } });
+      }
+    });
+  </script>
+</body>
+</html>
