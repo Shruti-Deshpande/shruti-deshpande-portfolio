@@ -92,6 +92,7 @@ h5 {
 
 @media (max-width: 800px) {
   .project { flex-direction: column; }
+  .project.reverse { flex-direction: column; }
   .project img { width: 100%; height: auto; aspect-ratio: auto; }
   .project-content { width: 100%; padding: 1rem; }
 }
@@ -315,21 +316,20 @@ footer {
 }
 
 .project-desc .desc-head h1 { 
-  margin: 0;
+  margin: 0 0 0.5rem 0;
   grid-column: 1;
-  margin-bottom: 0;
 }
 
 .project-desc .desc-head h1 + h4 { 
   display: block; 
-  margin-top: -2.5em;
+  margin-top: -1.2em;
   grid-column: 1;
   position: relative;
   z-index: 2;
 }
 .project-desc .desc-head h4 + h5 { 
   display: block; 
-  margin-top: -4.0em;
+  margin-top: -1.2em;
   grid-column: 1;
   position: relative;
   z-index: 2;
